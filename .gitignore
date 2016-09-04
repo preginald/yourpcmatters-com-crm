@@ -6,6 +6,7 @@
 Homestead.json
 Homestead.yaml
 
-bootstrap/cache
-storage
+/bootstrap/cache
+/storage
+
 .env

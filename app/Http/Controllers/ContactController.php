@@ -58,6 +58,9 @@ class ContactController extends Controller
 
         $contact->save();
 
+        // flash message
+        $request->session()->flash('success', 'The contact was successfully saved!');
+
         // redirect to show view
         return redirect()->route('contacts.show', $contact->id);
     }
@@ -70,7 +73,7 @@ class ContactController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('contacts.show');
     }
 
     /**

@@ -42,7 +42,24 @@ class ContactController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // validate form input data
+        $this->validate($request, [
+            'firstname' => 'required|max:50',
+            'lastname' => 'required|max:100',
+            'email' => 'required|email'
+        ]);
+        
+        // store form input data in database
+        $contact = new Contact;
+
+        $contact->firstname = $request->firstname;
+        $contact->lastname = $request->lastname;
+        $contact->email = $request->email;
+
+        $contact->save();
+
+        // redirect to show view
+        return redirect()->route('contacts.show', $contact->id);
     }
 
     /**

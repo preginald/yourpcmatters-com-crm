@@ -86,7 +86,11 @@ class ContactController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Find record from database and store as a var
+        $contact = Contact::find($id);
+
+        // Return edit view and pass in the var
+        return view('contacts.edit')->with('contact', $contact);
     }
 
     /**

@@ -131,8 +131,18 @@ class ContactController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        // Find record from database and store as var
+        $contact = Contact::find($id);
+
+        // Remove from storage
+        $contact->delete();
+
+        // Set flash data with success message
+        $request->session()->flash('success', 'The contact was successfully deleted!');
+
+        // Redirect to index view
+        return redirect()->route('contacts.index');
     }
 }

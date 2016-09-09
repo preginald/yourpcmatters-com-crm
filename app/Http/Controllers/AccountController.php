@@ -88,7 +88,11 @@ class AccountController extends Controller
      */
     public function edit($id)
     {
-        //
+        // Find record from database and store as a var
+        $account = Account::find($id);
+
+        // Return edit view and pass in the var
+        return view('accounts.edit')->with('account', $account);
     }
 
     /**

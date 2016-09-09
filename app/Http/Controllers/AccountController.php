@@ -25,7 +25,8 @@ class AccountController extends Controller
      */
     public function create()
     {
-        //
+        // redirect to account creation view
+        return view('accounts.create');
     }
 
     /**

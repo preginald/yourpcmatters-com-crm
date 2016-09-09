@@ -102,7 +102,27 @@ class ContactController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate form input data
+        $this->validate($request, [
+            'firstname' => 'required|max:50',
+            'lastname' => 'required|max:100',
+            'email' => 'required|email'
+        ]);
+
+        // Store form input data in database
+        $contact = Contact::find($id);
+
+        $contact->firstname = $request->input('firstname');
+        $contact->lastname = $request->input('lastname');
+        $contact->email = $request->input('email');
+
+        $contact->save();
+
+        // Set flash data with success message
+        $request->session()->flash('success', 'The contact was successfully updated!');
+        
+        // Redirect to show view with flash data
+        return redirect()->route('contacts.show', $contact->id);
     }
 
     /**

@@ -131,8 +131,18 @@ class AccountController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request,$id)
     {
-        //
+        // Find record from database and store as a var
+        $account = Account::find($id);
+
+        // Remove from database
+        $account->delete();
+
+        // Set flash data with success message
+        $request->session()->flash('success', 'The account was successfully deleted!');
+
+        // Redirect to index view
+        return redirect()->route('accounts.index');
     }
 }

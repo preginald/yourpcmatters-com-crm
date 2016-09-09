@@ -104,7 +104,25 @@ class AccountController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate form input data
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email'
+        ]);
+
+        // Store form input data in database
+        $account = Account::find($id);
+
+        $account->name = $request->input('name');
+        $account->email = $request->input('email');
+
+        $account->save();
+        
+        // Set flash data with success message
+        $request->session()->flash('success', 'The account was successfully updated!');
+
+        // Redirect to show view with flash data
+        return redirect()->route('accounts.show', $account->id);
     }
 
     /**

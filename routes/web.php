@@ -19,4 +19,6 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+Route::resource('/accounts', 'AccountController');
+
 Route::resource('/contacts', 'ContactController');

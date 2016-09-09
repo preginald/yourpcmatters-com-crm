@@ -34,6 +34,7 @@
                     </tbody>
                 </table>
             </div>
+            <div class="panel-footer">{!! $contacts->links() !!}</div>
         </div>
     </div>
 </div>

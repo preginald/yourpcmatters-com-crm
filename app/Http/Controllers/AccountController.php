@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Account;
 
 class AccountController extends Controller
 {
@@ -37,7 +38,25 @@ class AccountController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // Validate form input data
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'email' => 'required|email'
+        ]);
+
+        // Store form input data in database
+        $account = new Account;
+
+        $account->name = $request->name;
+        $account->email = $request->email;
+
+        $account->save();
+
+        // Set flash data with success message
+        $request->session()->flash('success', 'The account was successfully created!');
+
+        // Redirect to show view with flash data
+        return redirect()->route('accounts.show', $account->id);
     }
 
     /**

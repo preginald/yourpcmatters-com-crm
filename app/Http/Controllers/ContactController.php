@@ -46,7 +46,8 @@ class ContactController extends Controller
         $this->validate($request, [
             'firstname' => 'required|max:50',
             'lastname' => 'required|max:100',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'phone' => 'required'
         ]);
         
         // store form input data in database
@@ -55,6 +56,7 @@ class ContactController extends Controller
         $contact->firstname = $request->firstname;
         $contact->lastname = $request->lastname;
         $contact->email = $request->email;
+        $contact->phone = $request->phone;
 
         $contact->save();
 
@@ -106,7 +108,8 @@ class ContactController extends Controller
         $this->validate($request, [
             'firstname' => 'required|max:50',
             'lastname' => 'required|max:100',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'phone' => 'required'
         ]);
 
         // Store form input data in database
@@ -115,6 +118,7 @@ class ContactController extends Controller
         $contact->firstname = $request->input('firstname');
         $contact->lastname = $request->input('lastname');
         $contact->email = $request->input('email');
+        $contact->phone = $request->input('phone');
 
         $contact->save();
 

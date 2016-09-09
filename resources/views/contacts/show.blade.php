@@ -58,7 +58,9 @@
                 </div> 
 
                 <div class="col-sm-6">
-                    {!! Html::linkRoute('contacts.destroy', 'Delete', [$contact->id], ['class' => "btn btn-danger btn-block"]) !!}
+                    {!! Form::open(['route' => ['contacts.destroy', $contact->id],'method' => 'DELETE']) !!}
+                    {!! Form::submit('Delete', ['class' => "btn btn-danger btn-block"]) !!}
+                    {!! Form::close() !!}
                 </div> 
 
 </div>

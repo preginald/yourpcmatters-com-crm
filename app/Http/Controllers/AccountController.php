@@ -67,7 +67,11 @@ class AccountController extends Controller
      */
     public function show($id)
     {
-        //
+        // Find record from database
+        $account = Account::find($id);
+
+        // Redirect to show view
+        return view('accounts.show')->with('account', $account);
     }
 
     /**

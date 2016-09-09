@@ -16,7 +16,13 @@ class AccountController extends Controller
      */
     public function index()
     {
-        //
+        // Get all the acounts
+        $accounts = Account::paginate(5);
+
+        // Return view and pass data
+        return view('accounts.index', [
+            'accounts' => $accounts,
+        ]);
     }
 
     /**

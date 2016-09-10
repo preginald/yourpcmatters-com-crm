@@ -47,7 +47,8 @@ class AccountController extends Controller
         // Validate form input data
         $this->validate($request, [
             'name' => 'required|max:255',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'phone' => 'required'
         ]);
 
         // Store form input data in database
@@ -55,6 +56,7 @@ class AccountController extends Controller
 
         $account->name = $request->name;
         $account->email = $request->email;
+        $account->phone = $request->phone;
 
         $account->save();
 
@@ -107,7 +109,8 @@ class AccountController extends Controller
         // Validate form input data
         $this->validate($request, [
             'name' => 'required|max:255',
-            'email' => 'required|email'
+            'email' => 'required|email',
+            'phone' => 'required'
         ]);
 
         // Store form input data in database
@@ -115,6 +118,7 @@ class AccountController extends Controller
 
         $account->name = $request->input('name');
         $account->email = $request->input('email');
+        $account->phone = $request->input('phone');
 
         $account->save();
         

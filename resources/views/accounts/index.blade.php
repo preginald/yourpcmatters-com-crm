@@ -19,6 +19,7 @@
                             <th>id</th>
                             <th>Name</th>
                             <th>Email</th>
+                            <th>Phone</th>
                             <th></th>
                         </tr>
                     </thead>
@@ -28,6 +29,7 @@
                             <td>{{ $account->id }}</td>
                             <td>{{ $account->name }}</td>
                             <td>{{ $account->email }}</td>
+                            <td>{{ $account->phone }}</td>
                             <td><span class="pull-right"><a href="{{ route('accounts.show', $account->id) }}" class="btn btn-sm btn-default">View</a> <a href="{{ route('accounts.edit', $account->id) }}" class="btn btn-sm btn-default">Edit</a></td>
                         </tr>
                     @endforeach

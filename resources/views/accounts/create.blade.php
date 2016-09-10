@@ -18,7 +18,11 @@
                         {{ Form::label('email', 'Email') }}
                         {{ Form::text('email', null, ['class' => 'form-control']) }}
                     </div>                        
-                    {{ Form::submit('Create Account', ['class' => 'btn btn-success btn-block']) }} 
+                    <div class="form-group">
+                        {{ Form::label('phone', 'Phone') }}
+                        {{ Form::text('phone', null, ['class' => 'form-control']) }}
+                    </div>                        
+                   {{ Form::submit('Create Account', ['class' => 'btn btn-success btn-block']) }} 
                {!! Form::close() !!}
             </div>
         </div>

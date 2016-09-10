@@ -19,6 +19,10 @@
                         {{ Form::text('email', null, ['class' => 'form-control']) }}
                     </div>                        
                     <div class="form-group">
+                        {{ Form::label('phone', 'Phone') }}
+                        {{ Form::text('phone', null, ['class' => 'form-control']) }}
+                    </div>                        
+                   <div class="form-group">
                         {!! Html::linkRoute('accounts.show', 'Cancel', [$account->id], ['class' => "btn btn-default"]) !!}
                         {{ Form::submit('Save Changes', ['class' => 'btn btn-success']) }}
                     </div>

@@ -73,7 +73,11 @@ class LeadController extends Controller
      */
     public function show($id)
     {
-        //
+        // find record from database
+        $lead = Lead::find($id);
+
+        // redirect to show view
+        return view('leads.show')->with('lead', $lead);
     }
 
     /**

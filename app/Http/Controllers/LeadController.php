@@ -92,7 +92,11 @@ class LeadController extends Controller
      */
     public function edit($id)
     {
-        //
+        // find record from database and store as a var
+        $lead = Lead::find($id);
+
+        // return edit view and pass in the var
+        return view('leads.edit')->with('lead', $lead);
     }
 
     /**

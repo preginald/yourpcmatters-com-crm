@@ -108,7 +108,31 @@ class LeadController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // validate form input data
+        $this->validate($request, [
+           'accountname' => 'required|max:255',
+            'firstname' => 'required|max:50',
+            'lastname' => 'required|max:100',
+            'email' => 'required|email',
+            'phone' => 'required'
+        ]);
+
+        // store form input data in database
+        $lead = Lead::find($id);
+
+        $lead->accountname = $request->accountname;
+        $lead->firstname = $request->firstname;
+        $lead->lastname = $request->lastname;
+        $lead->email = $request->email;
+        $lead->phone = $request->phone;
+
+        $lead->save();
+
+        // flash message
+        $request->session()->flash('success', 'The lead was successfully updated!');
+
+        // redirect to show view
+        return redirect()->route('leads.show', $lead->id);
     }
 
     /**

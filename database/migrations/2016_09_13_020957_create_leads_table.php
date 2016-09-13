@@ -15,6 +15,11 @@ class CreateLeadsTable extends Migration
     {
         Schema::create('leads', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('accountname');
+            $table->string('firstname');
+            $table->string('lastname');
+            $table->string('email')->unique();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

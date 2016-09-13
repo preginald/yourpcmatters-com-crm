@@ -16,7 +16,11 @@ class LeadController extends Controller
      */
     public function index()
     {
-        //
+        // get all the leads
+        $leads = Lead::paginate(5);
+
+        // return a view and pass data
+        return view('leads.index')->with('leads', $leads);
     }
 
     /**

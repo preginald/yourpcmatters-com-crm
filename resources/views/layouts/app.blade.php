@@ -45,7 +45,7 @@
                     <li class="{{ Request::is('leads') ? "active" : "" }}"><a href="/leads">Leads</a></li>
                     <li class="{{ Request::is('accounts') ? "active" : "" }}"><a href="/accounts">Accounts</a></li>
                     <li class="{{ Request::is('contacts') ? "active" : "" }}"><a href="/contacts">Contacts</a></li>
-                    <li class="{{ Request::is('leads') ? "active" : "" }}"><a href="/tickets">Tickets</a></li>
+                    <li class="{{ Request::is('tickets') ? "active" : "" }}"><a href="/tickets">Tickets</a></li>
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

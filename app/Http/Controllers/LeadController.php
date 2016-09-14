@@ -141,8 +141,18 @@ class LeadController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Request $request, $id)
     {
-        //
+        // find record from database and store as a var
+        $lead = Lead::find($id);
+
+        // remove from storage
+        $lead->delete();
+
+        // set flash data with success message
+        $request->session()->flash('success', 'The lead was successfully deleted');
+
+        // return to index view
+        return redirect()->route('leads.index');
     }
 }

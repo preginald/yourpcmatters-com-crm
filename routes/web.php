@@ -24,3 +24,5 @@ Route::resource('/leads', 'LeadController');
 Route::resource('/accounts', 'AccountController');
 
 Route::resource('/contacts', 'ContactController');
+
+Route::resource('/tickets', 'TicketController');

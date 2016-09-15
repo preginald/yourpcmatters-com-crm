@@ -13,7 +13,11 @@ class CreateTicketStatusesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('ticket_statuses', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('name');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class CreateTicketStatusesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('ticket_statuses');
     }
 }

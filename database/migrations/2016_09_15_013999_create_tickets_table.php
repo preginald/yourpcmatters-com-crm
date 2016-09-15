@@ -20,6 +20,10 @@ class CreateTicketsTable extends Migration
             $table->integer('status_id')->unsigned();
             $table->string('subject');
             $table->text('discription');
+            $table->foreign('type_id')->references('id')->on('ticket_types');
+            $table->foreign('priority_id')->references('id')->on('ticket_priorities');
+            $table->foreign('status_id')->references('id')->on('ticket_statuses');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

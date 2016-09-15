@@ -11,6 +11,15 @@ class TicketStatusesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $ticket_statuses = [
+            ['name' => 'New'],
+            ['name' => 'Open'],
+            ['name' => 'Pending'],
+            ['name' => 'On-hold'],
+            ['name' => 'Solved'],
+            ['name' => 'Closed'],
+        ];
+        
+        DB::table('ticket_statuses')->insert($ticket_statuses);
     }
 }

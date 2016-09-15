@@ -11,6 +11,13 @@ class TicketTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        $ticket_types = [
+            ['name' => 'Question'],
+            ['name' => 'Incident'],
+            ['name' => 'Problem'],
+            ['name' => 'Task'],
+        ];
+        
+        DB::table('ticket_types')->insert($ticket_types);
     }
 }

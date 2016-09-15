@@ -13,7 +13,11 @@ class CreateTicketPrioritiesTable extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('ticket_priorities', function (Blueprint $table) {
+            $table->increments('id');
+            $table->text('name');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +27,6 @@ class CreateTicketPrioritiesTable extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('ticket_priorities');
     }
 }

@@ -25,7 +25,8 @@ class TicketController extends Controller
      */
     public function create()
     {
-        //
+        // redirect to create view
+        return view('tickets.create');
     }
 
     /**

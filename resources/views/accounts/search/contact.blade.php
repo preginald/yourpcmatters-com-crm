@@ -27,7 +27,7 @@
                         {{ Form::label('phone', 'Phone') }}
                         {{ Form::text('phone', null, ['class' => 'form-control']) }}
                     </div>                        
-                    {{ Form::submit('Create Contact', ['class' => 'btn btn-success btn-block']) }} 
+                    {{ Form::submit('Search Contact', ['class' => 'btn btn-success btn-block']) }} 
                {!! Form::close() !!}
             </div>
         </div>

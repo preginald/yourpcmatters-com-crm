@@ -1,7 +1,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">Contacts
             <a href="{{ route('accounts.searchcontacts', ['account' => $account->id]) }}" class="pull-right">
-                Add New Contact
+                Link Contact
             </a>
         </div>
 

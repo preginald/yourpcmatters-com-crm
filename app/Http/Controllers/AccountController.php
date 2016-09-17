@@ -77,9 +77,14 @@ class AccountController extends Controller
     {
         // Find record from database
         $account = Account::find($id);
+    
+        // Get contacts related to this account from database
+        /* $contacts = Contact::where('account_id', $account->id)->paginate(5); */
 
         // Redirect to show view
-        return view('accounts.show')->with('account', $account);
+        return view('accounts.show')
+            ->with('account', $account);
+            /* ->with('contacts', $contacts); */
     }
 
     /**

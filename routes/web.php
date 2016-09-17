@@ -23,6 +23,8 @@ Route::resource('/leads', 'LeadController');
 
 Route::resource('/accounts', 'AccountController');
 
+Route::get('/accounts/{account_id}/contacts/create', 'AccountSubController@createContact');
+
 Route::resource('/contacts', 'ContactController');
 
 Route::resource('/tickets', 'TicketController');

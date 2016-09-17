@@ -9,13 +9,13 @@
             <div class="panel-heading">
                 <div class="row">
                     <div class="col-sm-6">
-                        <h4>Basic Details</h4>
+                        <h4>Contact Details</h4>
                     </div>
                     <div class="col-sm-6">
                         {!! Html::linkRoute('contacts.edit', 'Edit', [$contact->id], ['class' => "btn btn-default pull-right"]) !!}
                     </div>
-                </div>
-            </div>
+                </div><!-- end of row -->
+            </div><!-- end of panel-heading -->
             <div class="panel-body">
                 <div class="row">
                     <div class="col-sm-4">
@@ -53,8 +53,8 @@
                         {!! Form::submit('Delete', ['class' => "btn btn-link btn-xs pull-right"]) !!}
                         {!! Form::close() !!}
                     </div>
-                </div>
-            </div>
+                </div><!-- end of row -->
+            </div><!-- end of panel-footer -->
         </div><!-- end of panel --> 
     </div><!-- end of col-md-8 --> 
 </div><!-- end of content row -->

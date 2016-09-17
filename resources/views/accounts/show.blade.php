@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-10">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
@@ -57,6 +57,6 @@
             </div><!-- end of panel-footer -->
         </div><!-- end of panel -->
         @include('accounts.partials.contacts');
-    </div><!-- end of col-md-8 -->
+    </div><!-- end of col-md-10 -->
 </div><!-- end of row -->
 @endsection

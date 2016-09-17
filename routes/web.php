@@ -23,7 +23,9 @@ Route::resource('/leads', 'LeadController');
 
 Route::resource('/accounts', 'AccountController');
 
-Route::get('/accounts/{account_id}/contacts/create', 'AccountSubController@createContact');
+Route::get('accounts/{account}/search/contacts', 'AccountSubController@showSearchContact')->name('accounts.searchcontacts');
+Route::post('/accounts/search/contacts', 'AccountSubController@searchContact')->name('accounts.search.contacts');
+Route::post('/accounts/attach/contacts', 'AccountSubController@attachContact')->name('accounts.attach.contacts');
 
 Route::resource('/contacts', 'ContactController');
 

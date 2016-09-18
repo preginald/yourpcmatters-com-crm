@@ -16,9 +16,7 @@ class CreateAccountContactTable extends Migration
         Schema::create('account_contact', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('account_id')->unsigned();
-            $table->foreign('account_id')->references('id')->on('contacts');
             $table->integer('contact_id')->unsigned();
-            $table->foreign('contact_id')->references('id')->on('accounts');
             $table->timestamps();
         });
     }

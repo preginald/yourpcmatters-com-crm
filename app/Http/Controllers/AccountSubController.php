@@ -37,23 +37,18 @@ class AccountSubController extends Controller
     {
         // Store account to var
         $account = $request->input()['account'];
-        $account = json_decode($account);
 
         // Find account from database
-        $account = Account::find($account->id); 
+        $account = Account::find($account); 
 
         // Store selected contact_ids from input to array 
         $contact_ids = $request->input()['contact_id'];
         
         // Sync contacts to account
-        $account->contacts()->sync($contact_ids);
-
-        // Loop through each selected contact
-            // Check if contact is already attached to account
-            // Attach contact to account 
+        $account->contacts()->syncWithoutDetaching($contact_ids);
 
         // Redirect to account show view
-        return view('accoutns.show')
+        return view('accounts.show')
             ->with('account', $account);
     }
 }

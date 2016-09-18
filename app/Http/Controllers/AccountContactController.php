@@ -7,16 +7,24 @@ use App\Http\Requests;
 use App\Contact;
 use App\Account;
 
-class AccountSubController extends Controller
+class AccountContactController extends Controller
 {
-    public function showSearchContact($account)
+    public function show($accountId, $contactId)
+    {
+        // Find record from database
+        dd($contactId);
+    
+        // Redirect to show view
+    }
+
+    public function showSearch($account)
     {
         // Redirect to search contact view
         return view('accounts.search.contact')
             ->with('account', $account);
     }
 
-    public function searchContact(Request $request)
+    public function search(Request $request)
     {
         // Retrieve account from database
         /* $account = Account::find($request->account); */
@@ -33,7 +41,7 @@ class AccountSubController extends Controller
             ->with('contacts', $contacts);
     }
 
-    public function attachContact(Request $request)
+    public function attach(Request $request)
     {
         // Store account to var
         $account = $request->input()['account'];
@@ -48,8 +56,6 @@ class AccountSubController extends Controller
         $account->contacts()->syncWithoutDetaching($contact_ids);
 
         // Redirect to account show view
-        /* return view('accounts.show') */
-        /*     ->with('account', $account); */
         return redirect()->route('accounts.show', $account);
     }
 }

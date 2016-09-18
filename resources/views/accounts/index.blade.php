@@ -27,7 +27,7 @@
                     @foreach ($accounts as $account)
                         <tr>
                             <td>{{ $account->id }}</td>
-                            <td>{{ $account->name }}</td>
+                            <td><a href="{{ route('accounts.show', $account->id) }}">{{ $account->name }}</a></td>
                             <td>{{ $account->email }}</td>
                             <td>{{ $account->phone }}</td>
                             <td><span class="pull-right"><a href="{{ route('accounts.show', $account->id) }}" class="btn btn-sm btn-default">View</a> <a href="{{ route('accounts.edit', $account->id) }}" class="btn btn-sm btn-default">Edit</a></td>

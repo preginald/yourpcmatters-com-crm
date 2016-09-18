@@ -48,7 +48,8 @@ class AccountSubController extends Controller
         $account->contacts()->syncWithoutDetaching($contact_ids);
 
         // Redirect to account show view
-        return view('accounts.show')
-            ->with('account', $account);
+        /* return view('accounts.show') */
+        /*     ->with('account', $account); */
+        return redirect()->route('accounts.show', $account);
     }
 }

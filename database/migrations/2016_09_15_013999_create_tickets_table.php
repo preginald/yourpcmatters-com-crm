@@ -21,7 +21,7 @@ class CreateTicketsTable extends Migration
             $table->integer('priority_id')->unsigned();
             $table->integer('status_id')->unsigned();
             $table->string('subject');
-            $table->text('discription');
+            $table->text('description');
             $table->foreign('account_id')->references('id')->on('accounts');
             $table->foreign('contact_id')->references('id')->on('contacts');
             $table->foreign('type_id')->references('id')->on('ticket_types');

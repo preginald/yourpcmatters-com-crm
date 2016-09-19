@@ -16,16 +16,8 @@
                     </div>                        
                     <div class="form-group">
                         {{ Form::label('contact_id', 'Contact') }}
-                        {{ Form::select('contact_id', [$contact->id => $contact->ContactFullName], NULL, ['class' => 'form-control']) }}
+                        {{ Form::select('contact_id', $contacts, $contact, ['class' => 'form-control']) }}
                     </div>
-                    <div class="form-group">
-                        {{ Form::label('subject', 'Ticket Name') }}
-                        {{ Form::text('subject', null, ['class' => 'form-control']) }}
-                    </div>
-                    <div class="form-group">
-                        {{ Form::label('description', 'Description') }}
-                        {{ Form::textarea('description', null, ['class' => 'form-control']) }}
-                    </div>                        
                     <div class="form-group">
                         {{ Form::label('type_id', 'Type') }}
                         {{ Form::select('type_id', $ticket_types, NULL, ['class' => 'form-control']) }}
@@ -37,6 +29,14 @@
                     <div class="form-group">
                         {{ Form::label('statu_id', 'Status') }}
                         {{ Form::select('status_id', $ticket_statuses, NULL, ['class' => 'form-control']) }}
+                    </div>                        
+                    <div class="form-group">
+                        {{ Form::label('subject', 'Ticket Name') }}
+                        {{ Form::text('subject', null, ['class' => 'form-control']) }}
+                    </div>
+                    <div class="form-group">
+                        {{ Form::label('description', 'Description') }}
+                        {{ Form::textarea('description', null, ['class' => 'form-control']) }}
                     </div>                        
                    {{ Form::submit('Create Ticket', ['class' => 'btn btn-success btn-block']) }} 
                {!! Form::close() !!}

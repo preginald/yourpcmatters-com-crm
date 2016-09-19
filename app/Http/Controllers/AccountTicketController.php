@@ -35,8 +35,9 @@ class AccountTicketController extends Controller
         // Find account
         $account = Account::find($account);
 
-        // Find contact 
-        $contact = contact::find($contact);
+        // Find contacts related to this account
+        $contacts = $account->contacts()->get();
+        $contacts = $contacts->pluck('ContactFullName', 'id');
 
         // Find ticket types
         $ticket_types = TicketType::pluck('name','id');
@@ -48,7 +49,7 @@ class AccountTicketController extends Controller
         $ticket_statuses = TicketStatus::pluck('name','id');
         
         // Redirect to ticket creation view
-        return view('accounts.tickets.create', compact('account', 'contact', 'ticket_types', 'ticket_priorities', 'ticket_statuses'));
+        return view('accounts.tickets.create', compact('account', 'contact', 'contacts', 'ticket_types', 'ticket_priorities', 'ticket_statuses'));
     }
 
     /**

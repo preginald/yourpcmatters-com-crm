@@ -75,11 +75,14 @@ class AccountController extends Controller
      */
     public function show($id)
     {
+        // Declare variables
+        $contact = 0;
+
         // Find record from database
         $account = Account::find($id);
     
         // Redirect to show view
-        return view('accounts.show', compact('account'));
+        return view('accounts.show', compact('account', 'contact'));
     }
 
     /**

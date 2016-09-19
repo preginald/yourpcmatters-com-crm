@@ -1,6 +1,6 @@
     <div class="panel panel-default">
         <div class="panel-heading">Contacts
-            <a href="{{ route('accounts.searchcontacts', ['account' => $account->id]) }}" class="pull-right">
+            <a href="{{ route('accounts.searchcontacts', $account) }}" class="pull-right">
                 Link Contact
             </a>
         </div>
@@ -20,10 +20,10 @@
                 @foreach ($account->contacts as $contact)
                     <tr>
                         <td>{{ $contact->id }}</td>
-                        <td>{{ $contact->firstname }} {{ $contact->lastname }}</td>
+                        <td><a href="{{ route('accounts.contacts.show', [$account->id,$contact->id]) }}">{{ $contact->firstname }} {{ $contact->lastname }}</a></td>
                         <td>{{ $contact->email }}</td>
                         <td>{{ $contact->phone }}</td>
-                        <td><span class="pull-right"><a href="{{ route('contacts.show', $contact->id) }}" class="btn btn-sm btn-default">View</a> <a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-sm btn-default">Edit</a></td>
+                        <td><span class="pull-right"><a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-sm btn-default">Edit</a></td>
                     </tr>
                 @endforeach
                 </tbody>

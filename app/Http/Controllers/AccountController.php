@@ -16,7 +16,7 @@ class AccountController extends Controller
      */
     public function index()
     {
-        // Get all the acounts
+        // Get all the accounts
         $accounts = Account::paginate(5);
 
         // Return view and pass data
@@ -79,8 +79,7 @@ class AccountController extends Controller
         $account = Account::find($id);
     
         // Redirect to show view
-        return view('accounts.show')
-            ->with('account', $account);
+        return view('accounts.show', compact('account'));
     }
 
     /**

@@ -15,4 +15,9 @@ class Contact extends Model
     {
         return $this->belongsToMany('App\Account');
     }
+
+    public function getContactFullNameAttribute()
+    {
+        return $this->attributes['firstname'] .' '. $this->attributes['lastname'];
+    }
 }

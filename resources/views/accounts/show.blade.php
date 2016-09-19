@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', '- Show New Account')
+@section('title', '- Show Account')
 
 @section('content')
 <div class="row">
-    <div class="col-md-10">
+    <div class="col-md-8">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <div class="row">
@@ -56,7 +56,8 @@
                 </div><!-- end of row -->
             </div><!-- end of panel-footer -->
         </div><!-- end of panel -->
-        @include('accounts.partials.contacts');
-    </div><!-- end of col-md-10 -->
+        @include('accounts.contacts.index');
+        @include('accounts.tickets.index');
+    </div><!-- end of col-md-8 -->
 </div><!-- end of row -->
 @endsection

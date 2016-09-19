@@ -56,7 +56,9 @@
                 </div><!-- end of row -->
             </div><!-- end of panel-footer -->
         </div><!-- end of panel --> 
-        @include('contacts.tickets.index');
+        @if ($contact->accounts()->count() > 0) 
+            @include('contacts.tickets.index');
+        @endif
     </div><!-- end of col-md-8 --> 
 </div><!-- end of content row -->
 @endsection

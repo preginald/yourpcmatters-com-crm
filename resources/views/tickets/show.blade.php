@@ -18,7 +18,7 @@
             </div><!-- end of panel-heading -->
             <div class="panel-body">
                 <div class="row">
-                    <div class="col-sm-3">
+                    <div class="col-sm-4">
                         <dl class="dl">
                             <dt>Type:</dt>
                             <dd>{{ $ticket->type->name }}</dd>
@@ -36,6 +36,20 @@
                         <dl class="dl">
                             <dt>Priority:</dt>
                             <dd>{{ $ticket->priority->name }}</dd>
+                        </dl>
+                    </div>
+                </div><!-- end of row -->
+                <div class="row">
+                    <div class="col-sm-6">
+                        <dl class="dl">
+                            <dt>Account:</dt>
+                            <dd>{{ $ticket->account->name }}</dd>
+                        </dl>
+                    </div>
+                    <div class="col-sm-6">
+                        <dl class="dl">
+                            <dt>Name:</dt>
+                            <dd>{{ $ticket->contact->ContactFullName }}</dd>
                         </dl>
                     </div>
                 </div><!-- end of row -->

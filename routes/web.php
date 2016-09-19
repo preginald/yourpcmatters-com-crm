@@ -37,4 +37,7 @@ Route::group(['middleware' => 'auth'], function () {
 
     // Account Ticket Routes
     Route::get('accounts/{account}/contacts/{contact}/tickets/create', 'AccountTicketController@create')->name('accounts.contacts.tickets.create');
+
+    // Contact Ticket Routes
+    Route::get('contacts/{contact}/tickets/create', 'ContactTicketController@create')->name('contacts.tickets.create');
 });

@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-10 col-md-offset-2">
+    <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">Contacts
                 <a href="{{ route('contacts.create') }}" class="pull-right">
@@ -27,10 +27,10 @@
                     @foreach ($contacts as $contact)
                         <tr>
                             <td>{{ $contact->id }}</td>
-                            <td>{{ $contact->firstname }} {{ $contact->lastname }}</td>
+                            <td><a href="{{ route('contacts.show', $contact->id) }}">{{ $contact->firstname }} {{ $contact->lastname }}</a></td>
                             <td>{{ $contact->email }}</td>
                             <td>{{ $contact->phone }}</td>
-                            <td><span class="pull-right"><a href="{{ route('contacts.show', $contact->id) }}" class="btn btn-sm btn-default">View</a> <a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-sm btn-default">Edit</a></td>
+                            <td><span class="pull-right"><a href="{{ route('contacts.edit', $contact->id) }}" class="btn btn-sm btn-default">Edit</a></td>
                         </tr>
                     @endforeach
                     </tbody>

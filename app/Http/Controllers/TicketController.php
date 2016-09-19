@@ -85,7 +85,7 @@ class TicketController extends Controller
         $request->session()->flash('success', 'The ticket was successfully created!');
 
         // Redirect to show view with flash data
-        return view('accounts.contacts.show', compact('account', 'contact'));
+        return view('tickets.show', compact('ticket'));
     }
 
     /**

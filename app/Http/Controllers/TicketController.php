@@ -57,7 +57,6 @@ class TicketController extends Controller
      */
     public function store(Request $request)
     {
-        /* dd($request->input()); */
         // Validate form input data
         $this->validate($request, [
             'account_id' => 'required|integer',
@@ -97,7 +96,11 @@ class TicketController extends Controller
      */
     public function show($id)
     {
-        //
+        // Find record from database
+        $ticket = Ticket::find($id);
+    
+        // Redirect to show view
+        return view('tickets.show', compact('ticket'));
     }
 
     /**
@@ -108,7 +111,20 @@ class TicketController extends Controller
      */
     public function edit($id)
     {
-        //
+        // load ticket types
+        $ticket_types = TicketType::pluck('name','id');
+
+        // load ticket priorities
+        $ticket_priorities = TicketPriority::pluck('name','id');
+
+        // load ticket types
+        $ticket_statuses = TicketStatus::pluck('name','id');
+
+        // Find record from database and store as a var
+        $ticket = ticket::find($id);
+
+        // Return edit view and pass in the var
+        return view('tickets.edit', compact('ticket', 'ticket_types', 'ticket_priorities', 'ticket_statuses'));
     }
 
     /**
@@ -120,7 +136,27 @@ class TicketController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // Validate form input data
+        $this->validate($request, [
+            'type_id' => 'required|integer',
+            'priority_id' => 'required|integer',
+            'status_id' => 'required|integer'
+        ]);
+
+        // Store form input data in database
+        $ticket = Ticket::find($id);
+
+        $ticket->type_id = $request->type_id; 
+        $ticket->priority_id = $request->priority_id; 
+        $ticket->status_id = $request->status_id; 
+        
+        $ticket->save();
+
+        // Set flash data with success message
+        $request->session()->flash('success', 'The ticket was successfully updated!');
+
+        // Redirect to show view with flash data
+        return view('tickets.show', compact('ticket'));
     }
 
     /**

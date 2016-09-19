@@ -11,10 +11,14 @@ class AccountContactController extends Controller
 {
     public function show($accountId, $contactId)
     {
-        // Find record from database
-        dd($contactId);
+        // Find account from database
+        $account = Account::find($accountId);
+
+        // Find contact from database
+        $contact = Contact::find($contactId);
     
         // Redirect to show view
+        return view('accounts.contacts.show', compact('account', 'contact'));
     }
 
     public function showSearch($account)

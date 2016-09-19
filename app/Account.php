@@ -15,4 +15,9 @@ class Account extends Model
     {
         return $this->belongsToMany('App\Contact');
     }
+
+    public function tickets()
+    {
+        return $this->hasMany('App\Ticket');
+    }
 }

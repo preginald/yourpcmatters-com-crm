@@ -56,6 +56,7 @@
                 </div><!-- end of row -->
             </div><!-- end of panel-footer -->
         </div><!-- end of panel --> 
+        @include('contacts.tickets.index');
     </div><!-- end of col-md-8 --> 
 </div><!-- end of content row -->
 @endsection

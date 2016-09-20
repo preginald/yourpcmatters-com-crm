@@ -9,7 +9,7 @@
                     <header>
                         <ul class="list-inline">
                             <li><span class="label label-info">{{ $comment->user->name }}</span></li>
-                            <li><small>{{ $comment->created_at }}</small></li>
+                            <li><small>{{ $comment->CreatedAtDiff }}</small></li>
                         </ul>
                     </header>
                     <body>{{ $comment->body }}</body>

@@ -73,10 +73,16 @@
             <div class="panel-footer">
                 <div class="row">
                     <div class="col-sm-5">
-                        Created: {{ $ticket->created_at }}
+                        <dl class="dl">
+                            <dt>Created:</dt>
+                            <dd>{{ $ticket->created_at->formatLocalized('%R %a %e %b %Y') }}</dd>
+                        </dl>
                     </div>
                     <div class="col-sm-5">
-                        Updated: {{ $ticket->updated_at }}
+                        <dl class="dl">
+                            <dt>Updated:</dt>
+                            <dd>{{ $ticket->updated_at->formatLocalized('%R %a %e %b %Y') }}</dd>
+                        </dl>
                     </div>
                     <div class="col-sm-2">
                         {!! Form::open(['route' => ['tickets.destroy', $ticket->id],'method' => 'DELETE']) !!}

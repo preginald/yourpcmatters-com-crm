@@ -23,20 +23,20 @@
                             <th>Status</th>
                             <th>Priority</th>
                             <th>Type</th>
-                            <th></th>
+                            <th>Updated</th>
                         </tr>
                     </thead>
                     <tbody>
                     @foreach ($tickets as $ticket)
                         <tr>
                             <td>{{ $ticket->id }}</td>
-                            <td><a href="{{ route('tickets.show', $ticket->id) }}">{{ $ticket->subject }}</a></td>
+                            <td><a href="{{ route('tickets.show', $ticket->id) }}">{{ str_limit($ticket->subject, 25) }}</a></td>
                             <td><a href="{{ route('accounts.show', $ticket->account->id) }}">{{ $ticket->account->name }}</a></td>
                             <td><a href="{{ route('accounts.contacts.show', [$ticket->account->id, $ticket->contact->id]) }}">{{ $ticket->contact->ContactFullName }}<a/></td>
                             <td>{{ $ticket->status->name }}</td>
                             <td>{{ $ticket->priority->name }}</td>
                             <td>{{ $ticket->type->name }}</td>
-                            <td><span class="pull-right"><a href="{{ route('tickets.show', $ticket->id) }}" class="btn btn-sm btn-default">View</a> <a href="{{ route('tickets.edit', $ticket->id) }}" class="btn btn-sm btn-default">Edit</a></td>
+                            <td><a href="{{ route('tickets.edit', $ticket->id) }}">{{ $ticket->UpdatedAtDiff }}</a></td>
                         </tr>
                     @endforeach
                     </tbody>

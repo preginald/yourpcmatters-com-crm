@@ -1,8 +1,8 @@
 # Service Business Management System
 
-I'm building my an app that will support my IT consulting business using [Laravel PHP framework](http://laravel.com).
+I'm building an app that will support my IT consulting business using [Laravel PHP framework](http://laravel.com).
 
-## Why create this app with others exist?
+## Why create this app when others exist?
 
 * designed specifically for the sole trader or small consulting business with fewer than 10 team members.
 * solves common problems clients experience during IT support life cycle
@@ -12,7 +12,7 @@ I'm building my an app that will support my IT consulting business using [Larave
 
 ## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](http://laravel.com/docs/contributions).
+Thank you for considering contributing to this app! I will draft a contribution guide if/when the time comes.
 
 ## License
 

@@ -30,4 +30,9 @@ class Ticket extends Model
     {
         return $this->belongsTo('App\TicketType');
     }
+
+    public function comments()
+    {
+        return $this->morphMany('App\Comment', 'commentable');
+    }
 }

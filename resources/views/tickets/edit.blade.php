@@ -29,6 +29,14 @@
                                 </div>                        
                             </div>
                         </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    {{ Form::label('body', 'Comment') }}
+                                    {{ Form::textarea('body', null, ['class' => 'form-control']) }}
+                                </div>                        
+                            </div>
+                        </div>
                             <div class="form-group">
                                 {!! Html::linkRoute('tickets.show', 'Cancel', [$ticket->id], ['class' => "btn btn-default"]) !!}
                                 {{ Form::submit('Save Changes', ['class' => 'btn btn-success']) }}

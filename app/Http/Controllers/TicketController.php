@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 use App\Http\Requests;
 
@@ -10,6 +11,8 @@ use App\Ticket;
 use App\TicketType;
 use App\TicketPriority;
 use App\TicketStatus;
+
+use App\Comment;
 
 class TicketController extends Controller
 {
@@ -140,7 +143,8 @@ class TicketController extends Controller
         $this->validate($request, [
             'type_id' => 'required|integer',
             'priority_id' => 'required|integer',
-            'status_id' => 'required|integer'
+            'status_id' => 'required|integer',
+            'body' => 'required'
         ]);
 
         // Store form input data in database
@@ -151,6 +155,14 @@ class TicketController extends Controller
         $ticket->status_id = $request->status_id; 
         
         $ticket->save();
+
+        // Store comment in database
+        $comment = new Comment();
+
+        $comment->user_id = Auth::user()->id;
+        $comment->body = $request->body;
+
+        $ticket->comments()->save($comment);
 
         // Set flash data with success message
         $request->session()->flash('success', 'The ticket was successfully updated!');

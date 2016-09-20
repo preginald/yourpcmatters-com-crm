@@ -4,11 +4,15 @@ I'm building an app that will support my IT consulting business using [Laravel P
 
 ## Why create this app when others exist?
 
-* designed specifically for the sole trader or small consulting business with fewer than 10 team members.
-* solves common problems clients experience during IT support life cycle
-* solves common problems we experience running an IT consulting business
-* solves common problems IT team members exprience during IT support life cycle
-* aims to improve client appreciation levels
+### Designed specifically for sole trader or small consulting business with fewer than 10 team members.
+
+### Solves common problems clients experience during IT support life cycle
+
+### Solves common problems we experience running an IT consulting business
+
+### Solves common problems IT team members exprience during IT support life cycle
+
+### Aims to improve client appreciation levels
 
 ## Contributing
 

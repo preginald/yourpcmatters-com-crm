@@ -12,7 +12,7 @@ The app aims to do this by preventing the common problems experienced by:
 
 * clients during IT support life cycle
 
-* IT business owners operating an IT consulting business
+* Business owners operating an IT consulting business
 
 * IT team members during IT support life cycle
 

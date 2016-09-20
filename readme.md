@@ -2,17 +2,21 @@
 
 I'm building an app that will support my IT consulting business using [Laravel PHP framework](http://laravel.com).
 
-## Why create this app when others exist?
+## Why create this app?
 
-### Designed specifically for sole trader or small consulting business with fewer than 10 team members.
+Yes there are other tried and tested CRMs and IT support apps out there but I wanted an app that is light weight and designed specifically for sole trader or small consulting business with fewer than 10 team members.
 
-### Solves common problems clients experience during IT support life cycle
+The app will focus on taking responsibility rather than blaming others, making excuses, justifying poor actions. 
 
-### Solves common problems we experience running an IT consulting business
+The app aims to do this by preventing the common problems such as:
 
-### Solves common problems IT team members exprience during IT support life cycle
+* Solves common problems clients experience during IT support life cycle
 
-### Aims to improve client appreciation levels
+* Solves common problems we experience running an IT consulting business
+
+* Solves common problems IT team members exprience during IT support life cycle
+
+* Aims to improve client appreciation levels
 
 ## Contributing
 

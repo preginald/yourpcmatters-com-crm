@@ -16,7 +16,7 @@ The app aims to do this by preventing the common problems such as:
 
 * Solves common problems IT team members exprience during IT support life cycle
 
-* Aims to improve client appreciation levels
+Ultimately I want to systematically and predictably deliver great value to my clients, team members, my community and my family. 
 
 ## Contributing
 

@@ -8,13 +8,13 @@ Yes there are other tried and tested CRMs and IT support apps out there but I wa
 
 The app will focus on taking responsibility rather than blaming others, making excuses, justifying poor actions. 
 
-The app aims to do this by preventing the common problems such as:
+The app aims to do this by preventing the common problems experienced by:
 
-* Solves common problems clients experience during IT support life cycle
+* clients during IT support life cycle
 
-* Solves common problems we experience running an IT consulting business
+* IT business owners operating an IT consulting business
 
-* Solves common problems IT team members exprience during IT support life cycle
+* IT team members during IT support life cycle
 
 Ultimately I want to systematically and predictably deliver great value to my clients, team members, my community and my family. 
 

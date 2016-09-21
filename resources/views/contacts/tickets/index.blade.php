@@ -13,7 +13,6 @@
                             <th>Subject</th>
                             <th>Account</th>
                             <th>Status</th>
-                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -23,7 +22,6 @@
                             <td><a href="{{ route('tickets.show', $ticket->id) }}">{{ $ticket->subject }}</a></td>
                             <td><a href="{{ route('accounts.show', $ticket->account->id) }}">{{ $ticket->account->name }}</a></td>
                             <td>{{ $ticket->status->name }}</td>
-                            <td><span class="pull-right"><a href="{{ route('tickets.show', $ticket->id) }}" class="btn btn-sm btn-default">View</a> <a href="{{ route('tickets.edit', $ticket->id) }}" class="btn btn-sm btn-default">Edit</a></td>
                         </tr>
                     @endforeach
                     </tbody>

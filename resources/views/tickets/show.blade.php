@@ -43,13 +43,13 @@
                     <div class="col-sm-6">
                         <dl class="dl">
                             <dt>Account:</dt>
-                            <dd>{{ $ticket->account->name }}</dd>
+                            <dd><a href="{{ route('accounts.show', $ticket->account->id) }}">{{ $ticket->account->name }}</a></dd>
                         </dl>
                     </div>
                     <div class="col-sm-6">
                         <dl class="dl">
                             <dt>Name:</dt>
-                            <dd>{{ $ticket->contact->ContactFullName }}</dd>
+                            <dd><a href="{{ route('accounts.contacts.show', [$ticket->account->id, $ticket->contact->id]) }}">{{ $ticket->contact->ContactFullName }}</a></dd>
                         </dl>
                     </div>
                 </div><!-- end of row -->
@@ -73,16 +73,12 @@
             <div class="panel-footer">
                 <div class="row">
                     <div class="col-sm-5">
-                        <dl class="dl">
-                            <dt>Created:</dt>
-                            <dd>{{ $ticket->created_at->formatLocalized('%R %a %e %b %Y') }}</dd>
-                        </dl>
+                            <strong>Created:</strong>
+                            <span>{{ $ticket->created_at->formatLocalized('%R %a %e %b %Y') }}</span>
                     </div>
                     <div class="col-sm-5">
-                        <dl class="dl">
-                            <dt>Updated:</dt>
-                            <dd>{{ $ticket->updated_at->formatLocalized('%R %a %e %b %Y') }}</dd>
-                        </dl>
+                            <strong>Updated:</strong>
+                            <span>{{ $ticket->updated_at->formatLocalized('%R %a %e %b %Y') }}</span>
                     </div>
                     <div class="col-sm-2">
                         {!! Form::open(['route' => ['tickets.destroy', $ticket->id],'method' => 'DELETE']) !!}
